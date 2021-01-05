@@ -6,6 +6,18 @@ Luigi.setConfig({
 				label: 'Home',
 				icon: 'home',
 				viewUrl: '/app.html#/home'
+			},
+			{
+				pathSegment: 'home',
+				label: 'Home',
+				icon: 'home',
+				viewUrl: '/app.html#/home',
+				children: [{
+					pathSegment: 'products',
+					label: 'Products',
+					icon: 'list',
+					viewUrl: '/app.html#/products'
+				}]
 			}
 		]
 	},
@@ -16,3 +28,4 @@ Luigi.setConfig({
 		},
 		responsiveNavigation: 'simpleMobileOnly'
 	}
+})
