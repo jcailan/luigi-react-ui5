@@ -556,6 +556,14 @@ module.exports = function(webpackEnv) {
 						{
 							from: 'node_modules/@luigi-project/core',
 							to: './luigi-core'
+						},
+						{
+							from: 'node_modules/@sap-theming/theming-base-content/content/Base/baseLib/sap_base_fiori/fonts',
+							to: './fonts'
+						},
+						{
+							from: 'node_modules/@sap-theming/theming-base-content/content/Base/baseLib/sap_fiori_3/fonts',
+							to: './fonts'
 						}
 					]
 				},
