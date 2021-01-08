@@ -4,6 +4,24 @@ This repository hosts the solution for the SAP Tutorial [Create an Application w
 
 Use the Luigi micro-frontend framework to create a web shopping application written with two different technologies (React and UI5) and configure additional features such as localization.
 
+## Getting Started
+
+### Luigi Core App
+
+- `react-core-mf` folder contains the Luigi Core app that uses React.js
+
+```shell
+> npm start
+```
+
+### UI5 Micro Frontend
+
+- `ui5-mf` folder contains the UI5 micro frontend app
+
+```shell
+> npm start
+```
+
 ## Node Modules
 
 - Local
