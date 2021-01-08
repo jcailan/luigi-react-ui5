@@ -4,6 +4,7 @@ import { addInitListener } from '@luigi-project/client';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Home } from './views/Home.jsx';
 import { ProductDetail } from './views/ProductDetail.jsx';
+import { Products } from './views/Products.jsx';
 import './index.css';
 
 class App extends Component {
