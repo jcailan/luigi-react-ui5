@@ -1,17 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import { addInitListener } from '@luigi-project/client';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Home } from './views/Home.jsx';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+class App extends Component {
+	constructor(props) {
+		super(props);
+		addInitListener(() => {
+			console.log('Luigi Client initialized.');
+		});
+	}
+	render() {
+		return (
+			<Router basename={`/app.html#`}>
+				<Route path="/home" component={Home} />
+			</Router>
+		);
+	}
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+render(<App />, document.getElementById('root'));
