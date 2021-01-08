@@ -10,7 +10,12 @@ Luigi.setConfig({
 					pathSegment: 'products',
 					label: 'Products',
 					icon: 'list',
-					viewUrl: '/app.html#/products'
+					viewUrl: '/app.html#/products',
+					keepSelectedForChildren: true,
+					children: [{
+						pathSegment: ':id',
+						viewUrl: '/app.html#/productDetail/:id'
+					}]
 				}]
 			}
 		]

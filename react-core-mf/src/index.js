@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { addInitListener } from '@luigi-project/client';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Home } from './views/Home.jsx';
+import { ProductDetail } from './views/ProductDetail.jsx';
 import './index.css';
 
 class App extends Component {
@@ -16,6 +17,8 @@ class App extends Component {
 		return (
 			<Router basename={`/app.html#`}>
 				<Route path="/home" component={Home} />
+				<Route path="/products" component={Products} />
+				<Route path='/productDetail/:id' component={ProductDetail} />
 			</Router>
 		);
 	}
