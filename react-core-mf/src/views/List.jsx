@@ -6,7 +6,7 @@ const NO_AVAILABLE_PRODUCT_MSG = 'Unfortunately, there is no available product a
 const navigateToDetail = (id) => linkManager().navigate('/home/products/' + id);
 const panelStyle = { cursor: 'pointer' };
 
-export const List = ({ items }) => (
+export const List = ({ items, localeDict }) => (
 	(items.length === 0) ? <MessageStrip type='error'>{NO_AVAILABLE_PRODUCT_MSG}</MessageStrip>
 		: items.map(({ id, name, price, icon, stock }) => {
 			return (
@@ -17,8 +17,8 @@ export const List = ({ items }) => (
 					<LayoutPanel.Body>
 						<LayoutGrid cols={2}>
 							<div>
-								<div>Price: &euro;{price}</div>
-								<div>Stocks: {stock}</div>
+								<div>{localeDict.PRICE}: &euro;{price}</div>
+								<div>{localeDict.STOCKS}: {stock}</div>
 							</div>
 							<div><Avatar circle glyph={icon} size='s' /></div>
 						</LayoutGrid>

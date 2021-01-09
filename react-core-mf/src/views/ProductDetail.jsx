@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ProductCollection } from '../../../ui5-mf/uimodule/webapp/model/products.json';
 import { LayoutPanel, MessageStrip } from 'fundamental-react';
 
-const NO_MATCH_PRODUCT_MSG = 'This product is not available. Please check again.';
-
-export const ProductDetail = ({ match }) => {
+export const ProductDetail = ({ match, localeDict }) => {
 	const itemId = parseInt(match.params.id);
 	const [item, setItem] = useState(null);
 
@@ -27,12 +25,16 @@ export const ProductDetail = ({ match }) => {
 		</LayoutPanel>
 	);
 
+	const renderContent = () => {
+		if (item === undefined) {
+			return <MessageStrip type='error'>​{localeDict.NO_MATCH_PRODUCT}​</MessageStrip>;
+		}
+		return item ? renderDetails() : null;
+	};
+
 	return (
 		<section className="fd-section">
-			{item
-				? renderDetails()
-				: <MessageStrip type='error'>{NO_MATCH_PRODUCT_MSG}</MessageStrip>
-			}
+			{ renderContent()}
 		</section>
 	);
 };
