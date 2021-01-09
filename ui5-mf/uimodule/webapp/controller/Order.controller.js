@@ -5,6 +5,13 @@ sap.ui.define([
 
 	return Controller.extend("luigi.ui5.controller.Order", {
 		onInit: function(Controller) {
+			const updateCurrentLanguage = () => {
+				const currentLanguage = LuigiClient.uxManager().getCurrentLocale();
+				sap.ui.getCore().getConfiguration().setLanguage(currentLanguage);
+			};
+
+			LuigiClient.addInitListener(updateCurrentLanguage);
+
 			const oModel = new sap.ui.model.json.JSONModel();
 
 			oModel.loadData("../model/products.json");
