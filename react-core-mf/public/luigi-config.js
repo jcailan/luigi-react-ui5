@@ -16,13 +16,12 @@ Luigi.setConfig({
 						pathSegment: ':id',
 						viewUrl: '/app.html#/productDetail/:id'
 					}]
+				}, {
+					pathSegment: 'order',
+					label: 'Order History',
+					icon: 'history',
+					viewUrl: 'http://localhost:8080/index.html'
 				}]
-			},
-			{
-				pathSegment: 'order',
-				label: 'Order History',
-				icon: 'history',
-				viewUrl: 'http://localhost:8080/index.html'
 			}
 		]
 	},
